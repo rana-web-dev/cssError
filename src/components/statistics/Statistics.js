@@ -49,10 +49,7 @@ const Statistics = () => {
   const [width, setWidth] = useState(0)
   useEffect(() => {
     setWidth(parentRef.current.clientWidth)
-    const handleResize = () => {
-      setWidth(parentRef.current.clientWidth)
-    }
-
+    const handleResize = () => setWidth(parentRef.current.clientWidth)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
